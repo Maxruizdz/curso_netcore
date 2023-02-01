@@ -1,0 +1,15 @@
+C:\Users\MaxiPC\source\repos\curso_netCOREE\bin\Debug\net6.0\curso_netCOREE.exe
+C:\Users\MaxiPC\source\repos\curso_netCOREE\bin\Debug\net6.0\curso_netCOREE.deps.json
+C:\Users\MaxiPC\source\repos\curso_netCOREE\bin\Debug\net6.0\curso_netCOREE.runtimeconfig.json
+C:\Users\MaxiPC\source\repos\curso_netCOREE\bin\Debug\net6.0\curso_netCOREE.dll
+C:\Users\MaxiPC\source\repos\curso_netCOREE\bin\Debug\net6.0\curso_netCOREE.pdb
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.csproj.AssemblyReference.cache
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.AssemblyInfoInputs.cache
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.AssemblyInfo.cs
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.csproj.CoreCompileInputs.cache
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.dll
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\refint\curso_netCOREE.dll
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.pdb
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\curso_netCOREE.genruntimeconfig.cache
+C:\Users\MaxiPC\source\repos\curso_netCOREE\obj\Debug\net6.0\ref\curso_netCOREE.dll

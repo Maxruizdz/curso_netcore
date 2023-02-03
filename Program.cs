@@ -2,8 +2,8 @@
 using curso_netCOREE.Entidades;
 
 Console.WriteLine("Hello, World!");
-Escuela escuela = new Escuela("Platzi Academy", 2023,
+Escuela escuela1 = new Escuela("Platzi Academy", 2023,
                     cuidad:    "Resistencia", pais: "Argentina"
                        );
-escuela.tipo_escuela = Tipo_Escuela.Secundaria;
-Console.WriteLine(escuela);
+escuela1.tipo_escuela = Tipo_Escuela.Secundaria;
+Escuela escuela2 = new Escuela("UTN", 2015, Tipo_Escuela.Universidad, pais: "Argentina");

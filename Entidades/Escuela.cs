@@ -29,6 +29,21 @@ namespace curso_netCOREE.Entidades
 
 
         }
+        public Escuela(string nombre, int año, Tipo_Escuela tipo, string pais = "", string cuidad = "") {
+
+
+
+            this.nombre = nombre;
+            this.fecha_Creacion = año;
+            this.Cuidad = cuidad;
+            this.Pais = pais;
+            tipo_escuela = tipo;
+
+
+
+
+
+        }
 
 
 
@@ -37,7 +52,7 @@ namespace curso_netCOREE.Entidades
 
 
 
-            return $"Nombre de la Institucion: {nombre}\n  Tipo Institucion: {tipo_escuela}\n   Cuidad de la Institucion: {Cuidad}\n  Pais de la Institucion:{Pais} ";
+            return $"Nombre de la Institucion: \"{nombre}\" \n  Tipo Institucion: {tipo_escuela}\n   Cuidad de la Institucion: {Cuidad}\n  Pais de la Institucion:{Pais} ";
                 
                }
     }

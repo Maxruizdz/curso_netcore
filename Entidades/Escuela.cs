@@ -82,13 +82,19 @@ namespace curso_netCOREE.Entidades
         
         
         }
-        public void  eliminar_curso(string uniqueID) {
+        public void  eliminar_curso(string nombre) {
 
-
+            cursos_escuelas.RemoveAll(delegate ( Curso cur) { return cur.nombre  == nombre; });
         
         
         }
+        public void eliminar_curso2(string nombre) {
 
+            cursos_escuelas.RemoveAll((Curso curso) => curso.nombre == nombre);
+        
+        
+        
+        }
 
 
         public override string ToString() {

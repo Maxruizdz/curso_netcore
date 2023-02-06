@@ -9,5 +9,9 @@ escuela1.tipo_escuela = Tipo_Escuela.Secundaria;
 Escuela escuela2 = new Escuela("UTN", 2015, Tipo_Escuela.Universidad, pais: "Argentina");
 
 
-escuela1.cursos_escuelas = new Curso[] { new Curso() {nombre="101" },
+escuela1.cursos_escuelas = new List<Curso>  { new Curso() {nombre="101" },
   new Curso() { nombre = "102" } ,new Curso() { nombre = "103" } };
+
+escuela1.imprimir_cursos();
+escuela1.eliminar_curso("102");
+escuela1.imprimir_cursos();

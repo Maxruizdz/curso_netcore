@@ -18,6 +18,7 @@ namespace curso_netCOREE.Entidades
         public string Cuidad { get; set; }
         public string Pais { get; set; }
         public Tipo_Escuela tipo_escuela { get;set; }
+        public List<Curso> cursos_escuelas { get; set; }
         public Escuela(string nombre, int fechac_creacion, string cuidad, string pais)
         {
 
@@ -25,7 +26,7 @@ namespace curso_netCOREE.Entidades
             this.fecha_Creacion = fechac_creacion;
             this.Cuidad = cuidad;
             this.Pais = pais;
-
+            this.cursos_escuelas = new List<Curso>();
 
 
         }
@@ -43,6 +44,49 @@ namespace curso_netCOREE.Entidades
 
 
 
+        }
+        public void imprimir_cursos() {
+
+            Console.WriteLine("===============================");
+            Console.WriteLine(  "    Curso de la Escuela       ");
+            Console.WriteLine("================================");
+
+
+            foreach (var curs in cursos_escuelas) {
+                Console.WriteLine($"Nombre: {curs.nombre} , id: {curs.UniqueID}");
+            
+            
+            
+            
+            
+            
+            }
+        
+        
+        
+        
+        
+        }
+
+        public void agregara_Curso(Curso curso) {
+
+
+            this.cursos_escuelas.Add(curso);
+        
+      
+        
+        }
+        public void agregar_listasCurso(List<Curso> cursos) {
+            this.cursos_escuelas.AddRange(cursos);
+        
+        
+        
+        }
+        public void  eliminar_curso(string uniqueID) {
+
+
+        
+        
         }
 
 

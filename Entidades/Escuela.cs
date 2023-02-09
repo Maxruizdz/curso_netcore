@@ -8,6 +8,7 @@ namespace curso_netCOREE.Entidades
 {
  public  class Escuela
     {
+        public string UniqueID { get; private set; } = Guid.NewGuid().ToString();
         public string nombre
         {
             get; set;

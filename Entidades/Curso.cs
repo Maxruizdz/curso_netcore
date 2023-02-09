@@ -11,7 +11,8 @@ namespace curso_netCOREE.Entidades
         public string nombre { get;  set; }
         public string UniqueID { get;private  set; }
         public Tipos_Jornada tipos_Jornada { get; set; }
-
+        public List<Asignatura> asignaturas { get; set; }
+        public List<Alumno> alumnos { get; set; }
         public Curso() {
 
             UniqueID = Guid.NewGuid().ToString();

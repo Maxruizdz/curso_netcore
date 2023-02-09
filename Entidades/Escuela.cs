@@ -40,6 +40,7 @@ namespace curso_netCOREE.Entidades
             this.Cuidad = cuidad;
             this.Pais = pais;
             tipo_escuela = tipo;
+            this.cursos_escuelas = new List<Curso>();
 
 
 

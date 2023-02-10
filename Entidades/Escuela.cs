@@ -107,5 +107,6 @@ namespace curso_netCOREE.Entidades
             return $"Nombre de la Institucion: \"{nombre}\" \n  Tipo Institucion: {tipo_escuela}\n   Cuidad de la Institucion: {Cuidad}\n  Pais de la Institucion:{Pais} ";
                 
                }
+
     }
 }

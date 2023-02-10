@@ -12,8 +12,29 @@ namespace curso_netCOREE.Entidades
         public string nombre { get; set; }
 
 
+        public List<Evaluacion> evaluaciones { get; set; }
 
-        public Alumno() => UniqueID = Guid.NewGuid().ToString();
+        public Alumno() => (UniqueID, evaluaciones)= (Guid.NewGuid().ToString(), this.evaluaciones= new List<Evaluacion>());
+        public override string ToString()
+        {
 
+
+
+
+            return $"Nombre del Alumno: \"{nombre}\" \n";
+
+        }
+
+        public void  mostrarEvaluaciones() {
+
+
+            foreach (var examenes in evaluaciones) {
+
+                Console.WriteLine(examenes);
+            
+            
+            }
+        
+        }
     }
 }

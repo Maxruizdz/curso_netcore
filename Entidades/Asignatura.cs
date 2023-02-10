@@ -12,5 +12,6 @@ namespace curso_netCOREE.Entidades
         public string Nombre { get; set; }
 
         public Asignatura() => UniqueId = Guid.NewGuid().ToString();
+        public override string ToString() { return $"Nombre de la Asignatura {Nombre}"; }
     }
 }

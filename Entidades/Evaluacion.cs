@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
-    public class Evaluaciones
+    public class Evaluacion
     {
         public string UniqueID { get; set; }
         public string nombre { get; set; }
@@ -15,6 +15,12 @@ namespace curso_netCOREE.Entidades
         public Asignatura Asignatura { get; set; }
 
         public float nota { get; set; }
+
+
+        public override string ToString()
+        {
+            return $"Alumno{alumno}   \nAsignatura:{Asignatura}\n  Nota:{nota}  ";
+        }
 
     }
 }

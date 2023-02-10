@@ -12,5 +12,6 @@ namespace curso_netCOREE.Entidades
 
 
              public override string ToString() { return $"Nombre de la Asignatura {base.Nombre}"; }
+
     }
 }

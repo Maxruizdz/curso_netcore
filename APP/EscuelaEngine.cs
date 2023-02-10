@@ -38,12 +38,12 @@ namespace curso_netCOREE.APP
                 var evaluaciones = from alumno in curso.alumnos
                                    from asigna in curso.asignaturas
                                    from nume_Exa in numeroexamen
-                                   select new Evaluacion (){ nombre = $"examen n {nume_Exa}", alumno = alumno, Asignatura = asigna, nota =(float)(5 * rdm.NextDouble()) };
+                                   select new Evaluacion (){ Nombre = $"examen n {nume_Exa}", alumno = alumno, Asignatura = asigna, nota =(float)(5 * rdm.NextDouble()) };
 
                 foreach (var alumnos in curso.alumnos) {
 
 
-                    alumnos.evaluaciones = evaluaciones.Where(p => p.UniqueID == alumnos.UniqueID).ToList();
+                    alumnos.evaluaciones = evaluaciones.Where(p => p.UniqueId == alumnos.UniqueId).ToList();
 
                   
                 
@@ -76,10 +76,10 @@ namespace curso_netCOREE.APP
             var lista_Alumno = from n1 in primer_nombre
                                from n2 in segundo_nombre
                                from ape in apellido
-                               select new Alumno { nombre = $"{n1}  {n2} {ape}" };
+                               select new Alumno { Nombre = $"{n1}  {n2} {ape}" };
 
 
-            return lista_Alumno.OrderBy((al)=> al.UniqueID).Take(cantidad).ToList();
+            return lista_Alumno.OrderBy((al)=> al.UniqueId).Take(cantidad).ToList();
 
 
 
@@ -88,11 +88,11 @@ namespace curso_netCOREE.APP
         public void CargarCursos() {
 
             this.escuela.cursos_escuelas = new List<Curso>(){
-                        new Curso(){ nombre = "101", tipos_Jornada= Tipos_Jornada.Mañana },
-                        new Curso() {nombre = "201", tipos_Jornada = Tipos_Jornada.Mañana},
-                        new Curso{nombre = "301", tipos_Jornada = Tipos_Jornada.Mañana},
-                        new Curso(){ nombre = "401", tipos_Jornada = Tipos_Jornada.tarde },
-                        new Curso() {nombre = "501", tipos_Jornada = Tipos_Jornada.tarde},
+                        new Curso(){ Nombre = "101", tipos_Jornada= Tipos_Jornada.Mañana },
+                        new Curso() {Nombre = "201", tipos_Jornada = Tipos_Jornada.Mañana},
+                        new Curso{Nombre = "301", tipos_Jornada = Tipos_Jornada.Mañana},
+                        new Curso(){ Nombre = "401", tipos_Jornada = Tipos_Jornada.tarde },
+                        new Curso() {Nombre = "501", tipos_Jornada = Tipos_Jornada.tarde},
 
 
                         
@@ -137,9 +137,6 @@ namespace curso_netCOREE.APP
         
         }
         public void prueba() {
-            foreach (var escuela in escuela.cursos_escuelas) {
-                es
-            
             
             }
         
@@ -150,4 +147,4 @@ namespace curso_netCOREE.APP
 
         }
 
-    }
+    

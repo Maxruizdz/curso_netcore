@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
+
     public class Evaluacion:Object_Escuela
+
+
     {
 
         public Alumno alumno { get; set; }

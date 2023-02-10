@@ -12,7 +12,7 @@ namespace curso_netCOREE.Entidades
 
         public List<Evaluacion> evaluaciones { get; set; } = new List<Evaluacion>();
 
- 
+
         public override string ToString()
         {
 
@@ -21,8 +21,8 @@ namespace curso_netCOREE.Entidades
 
             return $"Nombre del Alumno: \"{base.Nombre}\" \n";
 
-        }
 
+        }
         public void  mostrarEvaluaciones() {
 
 

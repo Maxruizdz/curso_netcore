@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
-    public  class Asignatura
+    public  class Asignatura:Object_Escuela
     {
-        public string UniqueId { get; private set; }
-        public string Nombre { get; set; }
 
-        public Asignatura() => UniqueId = Guid.NewGuid().ToString();
+
+
+             public override string ToString() { return $"Nombre de la Asignatura {base.Nombre}"; }
     }
 }

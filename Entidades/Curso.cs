@@ -6,26 +6,19 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
-    public class Curso
+    public class Curso:Object_Escuela
     {
-        public string nombre { get;  set; }
-        public string UniqueID { get;private  set; }
+    
         public Tipos_Jornada tipos_Jornada { get; set; }
-        public List<Asignatura> asignaturas { get; set; }
-        public List<Alumno> alumnos { get; set; }
-        public List<Evaluaciones> Evaluaciones { get; set; }
-        public Curso() {
+        public List<Asignatura> asignaturas { get; set; } = new List<Asignatura>();
+        public List<Alumno> alumnos { get; set; } = new List<Alumno>();
+        //public List<Evaluacion> Evaluaciones { get; set; }
+    
 
-            UniqueID = Guid.NewGuid().ToString();
-            this.asignaturas = new List<Asignatura>();
-            this.alumnos = new List<Alumno>();
-            this.Evaluaciones = new List<Evaluaciones>();
-        
-        
-        }
 
     
-    
-    
+
+
+
     }
 }

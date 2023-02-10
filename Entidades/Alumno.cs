@@ -6,14 +6,33 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
-  public class Alumno
+    public class Alumno: Object_Escuela
     {
-        public string UniqueID { get; private set; }
-        public string nombre { get; set; }
+
+
+        public List<Evaluacion> evaluaciones { get; set; } = new List<Evaluacion>();
+
+ 
+        public override string ToString()
+        {
 
 
 
-        public Alumno() => UniqueID = Guid.NewGuid().ToString();
 
+            return $"Nombre del Alumno: \"{base.Nombre}\" \n";
+
+        }
+
+        public void  mostrarEvaluaciones() {
+
+
+            foreach (var examenes in evaluaciones) {
+
+                Console.WriteLine(examenes);
+            
+            
+            }
+        
+        }
     }
 }

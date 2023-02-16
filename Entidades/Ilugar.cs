@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
-    public enum Tipos_Jornada
+    public interface Ilugar
     {
-        Mañana, tarde , Nocturna
-    }  
+        String direccion { get; set; }
+
+
+        void limpiar_lugar();
+
+
+
+    }
 }

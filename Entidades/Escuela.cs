@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace curso_netCOREE.Entidades
 {
- public  class Escuela:Object_Escuela
+ public  class Escuela:Object_Escuela, Ilugar
     {
         public int fecha_Creacion { get; set; }
 
@@ -14,6 +14,8 @@ namespace curso_netCOREE.Entidades
         public string Pais { get; set; }
         public Tipo_Escuela tipo_escuela { get;set; }
         public List<Curso> cursos_escuelas { get; set; } = new List<Curso>();
+        public string direccion { get; set; }
+
         public Escuela( int fechac_creacion, string cuidad, string pais)
         {
 
@@ -96,5 +98,17 @@ namespace curso_netCOREE.Entidades
                 
                }
 
+        public void limpiar_lugar()
+        {
+            Console.WriteLine("Limpiando Escuela");
+
+
+            foreach (var cursos in cursos_escuelas) {
+
+
+                cursos.limpiar_lugar();
+            
+            }
+        }
     }
 }

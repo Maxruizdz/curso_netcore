@@ -26,53 +26,64 @@ namespace curso_netCOREE.APP
          CargarAsignaturas();
             CargarEvaluaciones();
         }
-        public List<Object_Escuela> GetObjetosEscuela()
+
+        public List<Object_Escuela> GetObjetosEscuela(bool trae_evaluaciones=true, bool traer_alumnos=true,bool traer_asignaturas=true, bool traerCursos = true )
         {
             var listaObj = new List<Object_Escuela>();
             listaObj.Add(this.escuela);
-            listaObj.AddRange(this.escuela.cursos_escuelas);
-
+            if (traerCursos)
+            {
+                listaObj.AddRange(this.escuela.cursos_escuelas);
+            }
             foreach (var curso in escuela.cursos_escuelas)
             {
-                listaObj.AddRange(curso.asignaturas);
-                listaObj.AddRange(curso.alumnos);
-
-                foreach (var alumno in curso.alumnos)
+                if (traer_asignaturas)
                 {
-                    listaObj.AddRange(alumno.evaluaciones);
+                    listaObj.AddRange(curso.asignaturas);
+                }
+                if (traer_alumnos)
+                {
+                    listaObj.AddRange(curso.alumnos);
+                }
+                if (trae_evaluaciones == true)
+                {
+                    foreach (var alumno in curso.alumnos)
+                    {
+                        listaObj.AddRange(alumno.evaluaciones);
+                    }
                 }
             }
 
             return listaObj;
         }
-        #region
-
+        #region #region Métodos de Carga
         private void CargarEvaluaciones()
         {
-            Random rdm = new Random();
-
-            int[] numeroexamen = new int[] { 1, 2, 3, 4, 5 };
-
-            foreach (var curso in escuela.cursos_escuelas) {
-
-                var evaluaciones = from alumno in curso.alumnos
-                                   from asigna in curso.asignaturas
-                                   from nume_Exa in numeroexamen
-                                   select new Evaluacion (){ Nombre = $"examen n {nume_Exa}", alumno = alumno, Asignatura = asigna, nota =(float)(5 * rdm.NextDouble()) };
-
-                foreach (var alumnos in curso.alumnos) {
-
-
-                    alumnos.evaluaciones = evaluaciones.Where(p => p.UniqueId == alumnos.UniqueId).ToList();
-
-                  
-                
+            var rnd = new Random();
+            foreach (var curso in escuela.cursos_escuelas)
+            {
+                foreach (var asignatura in curso.asignaturas)
+                {
+                    foreach (var alumno in curso.alumnos)
+                    {
+                        for (int i = 0; i < 5; i++)
+                        {
+                            var ev = new Evaluacion
+                            {
+                                Asignatura = asignatura,
+                                Nombre = $"{asignatura.Nombre} Ev#{i + 1}",
+                                nota = MathF.Round(
+                                    5 * (float)rnd.NextDouble()
+                                    , 2),
+                                alumno = alumno
+                            };
+                            alumno.evaluaciones.Add(ev);
+                        }
+                    }
                 }
-              
             }
 
         }
-
         private void CargarAsignaturas()
         {
             foreach (Curso curso in escuela.cursos_escuelas) {
@@ -156,7 +167,7 @@ namespace curso_netCOREE.APP
         
         
         }
-        #endregion
+        #endregion metodos de carga Metodos de carga
 
 
 

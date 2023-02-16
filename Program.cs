@@ -4,9 +4,22 @@ using curso_netCOREE.Entidades;
 EscuelaEngine escuelaEnginer = new EscuelaEngine();
 escuelaEnginer.Inicializar();
 escuelaEnginer.escuela.limpiar_lugar();
-var lista_objetos = escuelaEnginer.GetObjetosEscuela();
+var lista_objetos = escuelaEnginer.GetObjetosEscuela(trae_evaluaciones:false);
 
 var listaIlugar = from obj in lista_objetos
-                  where obj is Ilugar
-                  select (Ilugar) obj;
+                  where obj is Evaluacion
+                  select (Evaluacion) obj;
 
+
+Console.WriteLine(lista_objetos.Count);
+
+
+/*foreach (var Ilugar in listaIlugar) {
+
+
+    Console.WriteLine(lista_objetos.Count);
+
+
+}
+
+*/

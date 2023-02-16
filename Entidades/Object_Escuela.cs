@@ -15,11 +15,13 @@ namespace curso_netCOREE.Entidades
         public string Nombre { get; set; }
 
 
-        public Object_Escuela() {
+        public Object_Escuela()
+        {
 
             this.UniqueId = Guid.NewGuid().ToString();
 
         }
 
     }
+}
 

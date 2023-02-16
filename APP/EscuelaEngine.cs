@@ -26,6 +26,26 @@ namespace curso_netCOREE.APP
          CargarAsignaturas();
             CargarEvaluaciones();
         }
+        public List<Object_Escuela> GetObjetosEscuela()
+        {
+            var listaObj = new List<Object_Escuela>();
+            listaObj.Add(this.escuela);
+            listaObj.AddRange(this.escuela.cursos_escuelas);
+
+            foreach (var curso in escuela.cursos_escuelas)
+            {
+                listaObj.AddRange(curso.asignaturas);
+                listaObj.AddRange(curso.alumnos);
+
+                foreach (var alumno in curso.alumnos)
+                {
+                    listaObj.AddRange(alumno.evaluaciones);
+                }
+            }
+
+            return listaObj;
+        }
+        #region
 
         private void CargarEvaluaciones()
         {
@@ -136,12 +156,11 @@ namespace curso_netCOREE.APP
         
         
         }
-        public void prueba() {
-            
-            }
-        
-        
-        }
+        #endregion
+
+
+
+    }
 
 
 

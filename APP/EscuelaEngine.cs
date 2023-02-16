@@ -27,29 +27,39 @@ namespace curso_netCOREE.APP
             CargarEvaluaciones();
         }
 
-        public List<Object_Escuela> GetObjetosEscuela(bool trae_evaluaciones=true, bool traer_alumnos=true,bool traer_asignaturas=true, bool traerCursos = true )
+        public List<Object_Escuela> GetObjetosEscuela( out int conteo_Evaluaciones, out int conteo_Cursos, out int conteo_Asignaturas, out int conteo_Alumno, bool trae_evaluaciones = true, bool traer_alumnos = true, bool traer_asignaturas = true, bool traerCursos = true)
         {
             var listaObj = new List<Object_Escuela>();
             listaObj.Add(this.escuela);
+             conteo_Evaluaciones = 0;
+            conteo_Asignaturas = 0;
+            conteo_Alumno = 0;
+            conteo_Cursos = 0;
             if (traerCursos)
             {
                 listaObj.AddRange(this.escuela.cursos_escuelas);
+                conteo_Cursos = escuela.cursos_escuelas.Count();
             }
+
             foreach (var curso in escuela.cursos_escuelas)
             {
+
                 if (traer_asignaturas)
                 {
                     listaObj.AddRange(curso.asignaturas);
+                    conteo_Asignaturas += curso.asignaturas.Count();
                 }
                 if (traer_alumnos)
                 {
                     listaObj.AddRange(curso.alumnos);
+                    conteo_Alumno += curso.alumnos.Count();
                 }
                 if (trae_evaluaciones == true)
                 {
                     foreach (var alumno in curso.alumnos)
                     {
                         listaObj.AddRange(alumno.evaluaciones);
+                        conteo_Evaluaciones += alumno.evaluaciones.Count();
                     }
                 }
             }

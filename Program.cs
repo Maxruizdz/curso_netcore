@@ -4,7 +4,7 @@ using curso_netCOREE.Entidades;
 EscuelaEngine escuelaEnginer = new EscuelaEngine();
 escuelaEnginer.Inicializar();
 escuelaEnginer.escuela.limpiar_lugar();
-var lista_objetos = escuelaEnginer.GetObjetosEscuela(trae_evaluaciones:false);
+var lista_objetos = escuelaEnginer.GetObjetosEscuela(trae_evaluaciones:false, false, false,false);
 
 var listaIlugar = from obj in lista_objetos
                   where obj is Evaluacion

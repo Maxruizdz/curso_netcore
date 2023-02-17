@@ -26,8 +26,55 @@ namespace curso_netCOREE.APP
          CargarAsignaturas();
             CargarEvaluaciones();
         }
+   public List<Object_Escuela> GetObjetosEscuela(
+            bool traeEvaluaciones = true,
+            bool traeAlumnos = true,
+            bool traeAsignaturas = true,
+            bool traeCursos = true
+            )
+        {
 
-        public List<Object_Escuela> GetObjetosEscuela( out int conteo_Evaluaciones, out int conteo_Cursos, out int conteo_Asignaturas, out int conteo_Alumno, bool trae_evaluaciones = true, bool traer_alumnos = true, bool traer_asignaturas = true, bool traerCursos = true)
+            return GetObjetosEscuela(out int dummy, out dummy, out dummy, out dummy);
+        }
+
+        public List<Object_Escuela> GetObjetosEscuela(
+            out int conteoEvaluaciones,
+           bool traeEvaluaciones = true,
+           bool traeAlumnos = true,
+           bool traeAsignaturas = true,
+           bool traeCursos = true
+           )
+        {
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out int dummy, out dummy, out dummy);
+        }
+
+        public List<Object_Escuela> GetObjetosEscuela(
+                        out int conteoEvaluaciones, out int conteoCursos,
+                        bool traeEvaluaciones = true,
+                        bool traeAlumnos = true,
+                        bool traeAsignaturas = true,
+                        bool traeCursos = true
+                        )
+        {
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoCursos, out int dummy, out dummy);
+        }
+
+        public List<Object_Escuela> GetObjetosEscuela(
+                        out int conteoEvaluaciones,
+                        out int conteoCursos,
+                        out int conteoAsignaturas,
+                        bool traeEvaluaciones = true,
+                        bool traeAlumnos = true,
+                        bool traeAsignaturas = true,
+                        bool traeCursos = true
+             )
+        {
+
+            return GetObjetosEscuela(out conteoEvaluaciones, out conteoCursos, out conteoAsignaturas, out int dummy);
+        }
+            public List<Object_Escuela> GetObjetosEscuela( out int conteo_Evaluaciones, out int conteo_Cursos, out int conteo_Asignaturas, out int conteo_Alumno, bool trae_evaluaciones = true, bool traer_alumnos = true, bool traer_asignaturas = true, bool traerCursos = true)
         {
             var listaObj = new List<Object_Escuela>();
             listaObj.Add(this.escuela);
